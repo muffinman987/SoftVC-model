@@ -1,0 +1,4 @@
+./dataset/44k/p226/sample-000813.wav
+./dataset/44k/p226/sample-001189.wav
+./dataset/44k/p225/11 Big Pimpin (feat. UGK)_voice_split_by_lalalai_14.wav
+./dataset/44k/p225/09 A Star Is Born (feat. J. Cole)_voice_split_by_lalalai_21.wav
