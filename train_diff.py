@@ -27,6 +27,11 @@ if __name__ == '__main__':
     
     # load config
     args = utils.load_config(cmd.config)
+
+    ##### add the path here #####
+    # args.env.expdir = '/my/custom/path' 
+    #############################
+    
     print(' > config:', cmd.config)
     print(' >    exp:', args.env.expdir)
     
