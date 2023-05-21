@@ -124,3 +124,4 @@ def load_model(
         if ckpt.get('optimizer') != None:
             optimizer.load_state_dict(ckpt['optimizer'])
     return global_step, model, optimizer
+
