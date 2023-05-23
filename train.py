@@ -45,7 +45,7 @@ def main():
     """Assume Single Node Multi GPUs Training Only"""
     assert torch.cuda.is_available(), "CPU training is not allowed."
     hps = utils.get_hparams()
-    hps.model_dir = "../gdive/MyDrive/SoftVC/model_weightsNew"
+
     n_gpus = torch.cuda.device_count()
     os.environ['MASTER_ADDR'] = 'localhost'
     os.environ['MASTER_PORT'] = hps.train.port
@@ -123,10 +123,6 @@ def run(rank, n_gpus, hps):
     scaler = GradScaler(enabled=hps.train.fp16_run)
 
     for epoch in range(epoch_str, hps.train.epochs + 1):
-        # update learning rate
-        if epoch > 1:
-            scheduler_g.step()
-            scheduler_d.step()
         # set up warm-up learning rate
         if epoch <= warmup_epoch:
             for param_group in optim_g.param_groups:
@@ -140,6 +136,9 @@ def run(rank, n_gpus, hps):
         else:
             train_and_evaluate(rank, epoch, hps, [net_g, net_d], [optim_g, optim_d], [scheduler_g, scheduler_d], scaler,
                                [train_loader, None], None, None)
+        # update learning rate
+        scheduler_g.step()
+        scheduler_d.step()
 
 
 def train_and_evaluate(rank, epoch, hps, nets, optims, schedulers, scaler, loaders, logger, writers):
@@ -295,7 +294,7 @@ def evaluate(hps, generator, eval_loader, writer_eval):
                 hps.data.sampling_rate,
                 hps.data.mel_fmin,
                 hps.data.mel_fmax)
-            y_hat = generator.module.infer(c, f0, uv, g=g)
+            y_hat,_ = generator.module.infer(c, f0, uv, g=g)
 
             y_hat_mel = mel_spectrogram_torch(
                 y_hat.squeeze(1).float(),
