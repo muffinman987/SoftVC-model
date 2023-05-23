@@ -86,12 +86,11 @@
     "use_spectral_norm": false,
     "gin_channels": 768,
     "ssl_dim": 768,
-    "n_speakers": 2,
+    "n_speakers": 1,
     "speech_encoder": "vec768l12",
     "speaker_embedding": false
   },
   "spk": {
-    "p225": 0,
-    "p226": 1
+    "p225": 0
   }
 }
