@@ -86,11 +86,12 @@
     "use_spectral_norm": false,
     "gin_channels": 768,
     "ssl_dim": 768,
-    "n_speakers": 1,
+    "n_speakers": 2,
     "speech_encoder": "vec768l12",
     "speaker_embedding": false
   },
   "spk": {
-    "jay": 0
+    "jaySongs": 0,
+    "jay": 1
   }
 }

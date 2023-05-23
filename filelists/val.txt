@@ -1,2 +1,4 @@
-./dataset/44k/jay/Podcats1_86.wav
-./dataset/44k/jay/Podcast4_134.wav
+./dataset/44k/jay/Podcats1_180.wav
+./dataset/44k/jaySongs/1HOUr_309.wav
+./dataset/44k/jaySongs/1HOUr_70.wav
+./dataset/44k/jay/Podcats1_1.wav

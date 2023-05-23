@@ -22,11 +22,12 @@ model:
   n_chans: 512
   n_hidden: 256
   n_layers: 20
-  n_spk: 1
+  n_spk: 2
   type: Diffusion
   use_pitch_aug: true
 spk:
-  jay: 0
+  jay: 1
+  jaySongs: 0
 train:
   amp_dtype: fp32
   batch_size: 48
