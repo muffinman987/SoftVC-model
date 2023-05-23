@@ -1,2 +1,2 @@
-./dataset/44k/p225(2)/Podcast2_254.wav
-./dataset/44k/p225(2)/Podcast2_48.wav
+./dataset/44k/jay/Podcats1_86.wav
+./dataset/44k/jay/Podcast4_134.wav
